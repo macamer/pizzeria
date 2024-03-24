@@ -14,12 +14,12 @@ import javafx.stage.Stage;
 public class JavaFx_Q11 extends Application {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        launch(args);
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
     
 }
