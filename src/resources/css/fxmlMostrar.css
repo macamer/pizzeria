@@ -1,0 +1,32 @@
+
+.root {
+    -fx-background-color: #eaffea;
+}
+
+.button{
+    -fx-border-radius: 5;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-padding: 10;
+}
+.button:hover{
+    -fx-background-color: #2aa869;
+    -fx-text-fill: white;
+}
+
+.button:pressed{
+    -fx-background-color: #006d63;
+    -fx-text-fill: white;
+}
+
+#tablaExtras{
+    -fx-border-radius: 5;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-background-color: white;
+}
+
+#hboxBotones{
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+}
