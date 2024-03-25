@@ -39,6 +39,7 @@ public class FXMLController implements Initializable {
             Stage stage1 = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("../Vistas/FXMLAlta.fxml"));
             Scene scene = new Scene(root);
+            scene.getStylesheets().add("resources/css/fxmlAlta.css");
             stage1.setScene(scene);
             stage1.setTitle("Introducir Pedido");
             stage1.show();
