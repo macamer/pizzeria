@@ -1,0 +1,36 @@
+
+.root {
+    -fx-background-color: #eaffea;
+}
+
+#titulo {
+    -fx-font-family: "Verdana";
+    -fx-font-size: 30px;
+    -fx-text-fill: #006d63;
+    -fx-border: 1;
+    -fx-padding: 1.6em;
+}
+
+#hboxIndex{
+    -fx-border-color: black; /* Color del borde negro */
+    -fx-border-width: 1px; /* Ancho del borde en píxeles */
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+}
+
+.button{
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-padding: 10;
+}
+.button:hover{
+    -fx-background-color: #2aa869;
+    -fx-text-fill: white;
+}
+
+.button:pressed{
+    -fx-background-color: #006d63;
+    -fx-text-fill: white;
+}
