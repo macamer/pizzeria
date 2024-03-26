@@ -22,7 +22,7 @@
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="btnMuestraPedido" mnemonicParsing="false" prefHeight="26.0" prefWidth="212.0" text="Mostrar Pedido" textAlignment="CENTER">
+                <Button fx:id="btnMuestraPedido" mnemonicParsing="false" onAction="#btnMostrarClicked" prefHeight="26.0" prefWidth="212.0" text="Mostrar Pedido" textAlignment="CENTER">
                     <VBox.margin>
                         <Insets top="15.0" />
                     </VBox.margin>
