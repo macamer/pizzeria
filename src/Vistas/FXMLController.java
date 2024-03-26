@@ -42,14 +42,38 @@ public class FXMLController implements Initializable {
             scene.getStylesheets().add("resources/css/fxmlAlta.css");
             stage1.setScene(scene);
             stage1.setTitle("Introducir Pedido");
+            //crear el Modity
+            //crear setController  para enviar los datos a AltaController
             stage1.show();
         } catch (IOException ex) {
             error.setText("Error al crear la vista");
-            System.out.println("Error al crear la vista");
-        } catch (Exception e){
-             error.setText("No se ha encontrado la vista");
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            error.setText("No se ha encontrado la vista");
             System.out.println(e.getMessage());
+            e.getStackTrace();
         }
-
+    }
+    
+    @FXML
+    private void btnMostrarClicked() throws IOException {
+        try {
+            Stage stage1 = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("../Vistas/FXMLMostrar.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("resources/css/fxmlMostrar.css");
+            stage1.setScene(scene);
+            stage1.setTitle("Mostrar Pedido");
+            stage1.show();
+        } catch (IOException ex) {
+            error.setText("Error al crear la vista");
+            System.out.println(ex.getMessage());
+            ex.printStackTrace();
+        } catch (Exception e) {
+            error.setText("No se ha encontrado la vista");
+            System.out.println(e.getMessage());
+            e.getStackTrace();
+        }
     }
 }
