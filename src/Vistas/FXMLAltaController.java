@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package Vistas;
 
 import Pedido.Modelo.ListaPedidos;
@@ -12,82 +8,79 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 /**
- * FXML Controller class
  *
- * @author Asus
+ * @author Maria Cavaller
  */
 public class FXMLAltaController implements Initializable {
 
     Pedido pedido;
     ListaPedidos miLista;
 
+    String nomP, apeP, dniP, nomPizza;
+    int cantidad, cantIng1 = 0, cantIng2 = 0, cantIng3 = 0;
+    boolean extrasP = false;
+
     @FXML
-    ComboBox <String> pizza;
-    
+    private TextField nom, ape, dni, cant;
     @FXML
-    RadioButton queso1,queso2,queso3,queso4,queso5,queso6;
-    
+    private Label errorDatos, result;
     @FXML
-    RadioButton cham1,cham2,cham3,cham4,cham5,cham6;
-    
-    @FXML
-    RadioButton bac1,bac2,bac3,bac4,bac5,bac6;
-    
-    @FXML
-    private TextField nom;
-    @FXML
-    private TextField ape;
-    @FXML
-    private TextField dni;
-    @FXML
-    private Label errorDatos;
+    ComboBox<String> pizza;
     @FXML
     private CheckBox extras;
     @FXML
+    RadioButton queso1, queso2, queso3, queso4, queso5, queso6;
+
+    @FXML
+    RadioButton cham1, cham2, cham3, cham4, cham5, cham6;
+
+    @FXML
+    RadioButton bac1, bac2, bac3, bac4, bac5, bac6;
+    @FXML
     private VBox tablaExtras;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
             pizza.getItems().addAll("Provenzal", "Barbacoa", "Mediterránea");
-            /* pizza.getItems().add("Provenzal");
-            pizza.getItems().add("Barbacoa");
-            pizza.getItems().add("Mediterránea");*/
             pizza.getSelectionModel().selectFirst();
-            /*
-            ToggleGroup tgQueso = new ToggleGroup();
-            queso1.setToggleGroup(tgQueso);
-            queso2.setToggleGroup(tgQueso);
-            queso3.setToggleGroup(tgQueso);
-            queso4.setToggleGroup(tgQueso);
-            queso5.setToggleGroup(tgQueso);
-            queso6.setToggleGroup(tgQueso);
-            ToggleGroup tgCham = new ToggleGroup();
-            cham1.setToggleGroup(tgCham);
-            cham2.setToggleGroup(tgCham);
-            cham3.setToggleGroup(tgCham);
-            cham4.setToggleGroup(tgCham);
-            cham5.setToggleGroup(tgCham);
-            cham6.setToggleGroup(tgCham);
-            ToggleGroup tgBac = new ToggleGroup();
-            bac1.setToggleGroup(tgBac);
-            bac2.setToggleGroup(tgBac);
-            bac3.setToggleGroup(tgBac);
-            bac4.setToggleGroup(tgBac);
-            bac5.setToggleGroup(tgBac);
-            bac6.setToggleGroup(tgBac);*/
-            
-            
-            
-            
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void btnGuardar() {
+        result.setText("");
+        errorDatos.setText("");
+        try {
+            nomP = nom.getText();
+            apeP = ape.getText();
+            dniP = dni.getText();
+            nomPizza = pizza.getValue().toString();
+            cantidad = Integer.parseInt(cant.getText());
+            if (extras.isSelected()) {
+                extrasP = true;
+                //calcular cantIng
+            }
+            //instanciar
+            pedido = new Pedido(nomP, apeP, dniP, nomPizza, cantidad, extrasP, cantIng1, cantIng2, cantIng3);
+            System.out.println(pedido.toString());
+            if (miLista.agregarPedido(pedido)) {
+                result.setText("Pedido Guardado con éxito");
+            } else {
+                result.setText("No se ha podido guardar");
+                result.setTextFill(Color.RED);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setDatos(ListaPedidos lista) {
+        miLista = lista;
     }
 }
