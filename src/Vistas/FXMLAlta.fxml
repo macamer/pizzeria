@@ -37,7 +37,10 @@
                 </TextField>
             </children>
         </HBox>
-        <Label fx:id="errorDatos" layoutX="22.0" layoutY="102.0" prefHeight="18.0" prefWidth="408.0" />
+        <Label fx:id="errorDatos" layoutX="22.0" layoutY="102.0" prefHeight="18.0" prefWidth="408.0" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
         <Label layoutX="22.0" layoutY="147.0" text="Pizzas">
             <font>
                 <Font name="Candara Light" size="18.0" />
@@ -289,7 +292,12 @@
       </ImageView>
       <Label fx:id="result" layoutX="69.0" layoutY="435.0" prefHeight="18.0" prefWidth="273.0">
          <font>
-            <Font name="Candara Light" size="13.0" />
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorCant" layoutX="384.0" layoutY="232.0" prefHeight="19.0" prefWidth="190.0" textFill="RED">
+         <font>
+            <Font size="13.0" />
          </font>
       </Label>
     </children>
