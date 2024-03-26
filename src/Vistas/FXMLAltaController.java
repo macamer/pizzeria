@@ -9,7 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import Libreria.Libreria.*;
+import static Libreria.Libreria.*;
 
 /**
  *
@@ -34,6 +34,8 @@ public class FXMLAltaController implements Initializable {
     @FXML
     private CheckBox extras;
     @FXML
+    ToggleGroup queso, cham, bacon;
+    @FXML
     RadioButton queso1, queso2, queso3, queso4, queso5, queso6;
 
     @FXML
@@ -52,6 +54,20 @@ public class FXMLAltaController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        extras.setOnAction(e -> {
+            if (extras.isSelected()) {
+                System.out.println("se ha seleccionado");
+                queso.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
+                cham.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
+                bacon.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
+            } else {
+                System.out.println("se ha deseleccionado");
+                queso.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(true));
+                cham.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(true));
+                bacon.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(true));
+            }
+        });
     }
 
     @FXML
@@ -62,15 +78,15 @@ public class FXMLAltaController implements Initializable {
         errorCant.setText("");
         try {
             nomP = nom.getText();
-            if (!nomP.equals("")) {
+            if (validaNomApe(nomP)) {
                 apeP = ape.getText();
-                if (!apeP.equals("")) {
+                if (validaNomApe(apeP)) {
                     dniP = dni.getText();
-                    if (!Libreria.Libreria.validaFormatoDni(dniP)) {
+                    if (!validaFormatoDni(dniP)) {
                         errorDatos.setText("Formato de DNI incorrecto");
                         dni.setText("");
                         correcto = false;
-                    } else if (!Libreria.Libreria.validaLetraDni(dniP)) {
+                    } else if (!validaLetraDni(dniP)) {
                         errorDatos.setText("Letra de DNI incorrecto");
                         dni.setText("");
                         correcto = false;
@@ -85,6 +101,10 @@ public class FXMLAltaController implements Initializable {
                     }
                     if (extras.isSelected()) {
                         extrasP = true;
+                        System.out.println("se ha seleccionado");
+                        queso.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
+                        cham.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
+                        bacon.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
                         //calcular cantIng
                     }
                 } else {
