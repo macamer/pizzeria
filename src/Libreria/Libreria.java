@@ -46,4 +46,11 @@ public class Libreria {
         }
         return val;
     }
+    
+    //metodo que comprueba si el nombre es texto
+     public static boolean validaNomApe(String texto){
+        boolean correcto;
+            correcto = texto.matches("[a-zA-Z\\s]+");
+        return correcto;
+    }
 }
