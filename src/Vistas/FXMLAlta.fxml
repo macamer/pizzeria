@@ -109,7 +109,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Label>
-                  <RadioButton fx:id="queso1" mnemonicParsing="false" text="1">
+                  <RadioButton fx:id="queso1" disable="true" mnemonicParsing="false" text="1">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -117,7 +117,7 @@
                         <ToggleGroup fx:id="queso" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="queso2" mnemonicParsing="false" text="2" toggleGroup="$queso">
+                  <RadioButton fx:id="queso2" disable="true" mnemonicParsing="false" text="2" toggleGroup="$queso">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -125,7 +125,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="queso3" mnemonicParsing="false" text="3" toggleGroup="$queso">
+                  <RadioButton fx:id="queso3" disable="true" mnemonicParsing="false" text="3" toggleGroup="$queso">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -133,7 +133,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="queso4" mnemonicParsing="false" text="4" toggleGroup="$queso">
+                  <RadioButton fx:id="queso4" disable="true" mnemonicParsing="false" text="4" toggleGroup="$queso">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -141,7 +141,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="queso5" mnemonicParsing="false" text="5" toggleGroup="$queso">
+                  <RadioButton fx:id="queso5" disable="true" mnemonicParsing="false" text="5" toggleGroup="$queso">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -149,7 +149,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="queso6" mnemonicParsing="false" text="6" toggleGroup="$queso">
+                  <RadioButton fx:id="queso6" disable="true" mnemonicParsing="false" text="6" toggleGroup="$queso">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -169,7 +169,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Label>
-                  <RadioButton fx:id="cham1" mnemonicParsing="false" text="1">
+                  <RadioButton fx:id="cham1" disable="true" mnemonicParsing="false" text="1">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -177,7 +177,7 @@
                         <ToggleGroup fx:id="cham" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="cham2" mnemonicParsing="false" text="2" toggleGroup="$cham">
+                  <RadioButton fx:id="cham2" disable="true" mnemonicParsing="false" text="2" toggleGroup="$cham">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -185,7 +185,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="cham3" mnemonicParsing="false" text="3" toggleGroup="$cham">
+                  <RadioButton fx:id="cham3" disable="true" mnemonicParsing="false" text="3" toggleGroup="$cham">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -193,7 +193,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="cham4" mnemonicParsing="false" text="4" toggleGroup="$cham">
+                  <RadioButton fx:id="cham4" disable="true" mnemonicParsing="false" text="4" toggleGroup="$cham">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -201,7 +201,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="cham5" mnemonicParsing="false" text="5" toggleGroup="$cham">
+                  <RadioButton fx:id="cham5" disable="true" mnemonicParsing="false" text="5" toggleGroup="$cham">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -209,7 +209,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="cham6" mnemonicParsing="false" text="6" toggleGroup="$cham">
+                  <RadioButton fx:id="cham6" disable="true" mnemonicParsing="false" text="6" toggleGroup="$cham">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -229,7 +229,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Label>
-                  <RadioButton fx:id="bac1" mnemonicParsing="false" text="1">
+                  <RadioButton fx:id="bac1" disable="true" mnemonicParsing="false" text="1">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -237,7 +237,7 @@
                         <ToggleGroup fx:id="bacon" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="bac2" mnemonicParsing="false" text="2" toggleGroup="$bacon">
+                  <RadioButton fx:id="bac2" disable="true" mnemonicParsing="false" text="2" toggleGroup="$bacon">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -245,7 +245,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="bac3" mnemonicParsing="false" text="3" toggleGroup="$bacon">
+                  <RadioButton fx:id="bac3" disable="true" mnemonicParsing="false" text="3" toggleGroup="$bacon">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -253,7 +253,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="bac4" mnemonicParsing="false" text="4" toggleGroup="$bacon">
+                  <RadioButton fx:id="bac4" disable="true" mnemonicParsing="false" text="4" toggleGroup="$bacon">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -261,7 +261,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="bac5" mnemonicParsing="false" text="5" toggleGroup="$bacon">
+                  <RadioButton fx:id="bac5" disable="true" mnemonicParsing="false" text="5" toggleGroup="$bacon">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
@@ -269,7 +269,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </RadioButton>
-                  <RadioButton fx:id="bac6" mnemonicParsing="false" text="6" toggleGroup="$bacon">
+                  <RadioButton fx:id="bac6" disable="true" mnemonicParsing="false" text="6" toggleGroup="$bacon">
                      <font>
                         <Font name="Candara Light" size="11.0" />
                      </font>
