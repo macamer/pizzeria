@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package javafx_q11;
+package Pedido;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  *
  * @author Maria Cavaller
  */
-public class JavaFx_Q11 extends Application {
+public class main extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -23,9 +23,10 @@ public class JavaFx_Q11 extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
-            
-            //mostrar la escena
+            //Principal stage
+            Parent root = FXMLLoader.load(getClass().getResource("../Vistas/FXML.fxml"));
+            stage.setTitle("Pizza Mario");
+
             Scene scene = new Scene(root);
             scene.getStylesheets().add("resources/css/fxml.css");
             stage.setScene(scene);
@@ -35,5 +36,5 @@ public class JavaFx_Q11 extends Application {
             ex.printStackTrace();
         }
     }
-    
+
 }
