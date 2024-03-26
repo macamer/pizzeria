@@ -6,6 +6,11 @@ package Pedido.Modelo;
  */
 public class Pedido {
 
+    @Override
+    public String toString() {
+        return "Pedido{" + "nombreC=" + nombreC + ", apeC=" + apeC + ", dni=" + dni + ", nomPizza=" + nomPizza + ", cantidad=" + cantidad + ", extras=" + extras + ", cantIng1=" + cantIng1 + ", cantIng2=" + cantIng2 + ", cantIng3=" + cantIng3 + '}';
+    }
+
     private String nombreC;
     private String apeC;
     private String dni;
@@ -100,5 +105,5 @@ public class Pedido {
     public void setCantIng3(int cantIng3) {
         this.cantIng3 = cantIng3;
     }
-
+    
 }
