@@ -106,7 +106,7 @@
                         <Font name="Candara Light" size="14.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="20.0" />
+                        <Insets right="40.0" />
                      </HBox.margin>
                   </Label>
                   <RadioButton fx:id="queso1" disable="true" mnemonicParsing="false" text="1">
@@ -166,7 +166,7 @@
                         <Font name="Candara Light" size="14.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="20.0" />
+                        <Insets right="40.0" />
                      </HBox.margin>
                   </Label>
                   <RadioButton fx:id="cham1" disable="true" mnemonicParsing="false" text="1">
@@ -226,7 +226,7 @@
                         <Font name="Candara Light" size="14.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="20.0" />
+                        <Insets right="40.0" />
                      </HBox.margin>
                   </Label>
                   <RadioButton fx:id="bac1" disable="true" mnemonicParsing="false" text="1">
