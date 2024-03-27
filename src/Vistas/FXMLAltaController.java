@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import static Libreria.Libreria.*;
+import javafx.stage.Stage;
 
 /**
  *
@@ -36,15 +37,7 @@ public class FXMLAltaController implements Initializable {
     @FXML
     ToggleGroup queso, cham, bacon;
     @FXML
-    RadioButton queso1, queso2, queso3, queso4, queso5, queso6;
-
-    @FXML
-    RadioButton cham1, cham2, cham3, cham4, cham5, cham6;
-
-    @FXML
-    RadioButton bac1, bac2, bac3, bac4, bac5, bac6;
-    @FXML
-    private VBox tablaExtras;
+    Button btnGuardar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,7 +63,6 @@ public class FXMLAltaController implements Initializable {
         });
     }
 
-    @FXML
     public void btnGuardar() {
         correcto = true;
         result.setText("");
@@ -93,10 +85,15 @@ public class FXMLAltaController implements Initializable {
                     }
                     nomPizza = pizza.getValue().toString();
                     if (correcto) {
-                        cantidad = Integer.parseInt(cant.getText());
-                        if (cant.getText().equals("")) {
+                        try {
+                            cantidad = Integer.parseInt(cant.getText());
+                            if (cantidad > 10 || cantidad < 1) {
+                                correcto = false;
+                                errorCant.setText("Debe ser entre 1 y 10");
+                            }
+                        } catch (NumberFormatException ex) {
                             correcto = false;
-                            errorCant.setText("Introducir cantidad");
+                            errorCant.setText("Introducir un número");
                         }
                     }
                     if (extras.isSelected()) {
@@ -106,6 +103,27 @@ public class FXMLAltaController implements Initializable {
                         cham.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
                         bacon.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
                         //calcular cantIng
+                        if (queso.getSelectedToggle() != null) {
+                            try {
+                                cantIng1 = Integer.parseInt(((RadioButton) queso.getSelectedToggle()).getText());
+                            } catch (Exception e) {
+                                result.setText("Error de conversión");
+                            }
+                        }
+                        if (cham.getSelectedToggle() != null) {
+                            try {
+                                cantIng2 = Integer.parseInt(((RadioButton) cham.getSelectedToggle()).getText());
+                            } catch (Exception e) {
+                                result.setText("Error de conversión");
+                            }
+                        }
+                        if (bacon.getSelectedToggle() != null) {
+                            try {
+                                cantIng3 = Integer.parseInt(((RadioButton) bacon.getSelectedToggle()).getText());
+                            } catch (Exception e) {
+                                result.setText("Error de conversión");
+                            }
+                        }
                     }
                 } else {
                     correcto = false;
@@ -122,6 +140,8 @@ public class FXMLAltaController implements Initializable {
                 if (miLista.agregarPedido(pedido)) {
                     result.setText("Pedido Guardado con éxito");
                     result.setTextFill(Color.GREEN);
+                    Stage v = (Stage) btnGuardar.getScene().getWindow();
+                    v.close();
                 } else {
                     result.setText("No se ha podido guardar");
                     result.setTextFill(Color.RED);
