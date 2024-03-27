@@ -2,14 +2,23 @@
 .root {
     -fx-background-color: #eaffea;
 }
-
+/*
 #titulo {
     -fx-font-family: "Verdana";
     -fx-font-size: 30px;
     -fx-text-fill: #006d63;
     -fx-border: 1;
     -fx-padding: 1.6em;
+}*/
+
+#titulo {
+    -fx-font-family: "Bradley Hand ITC", sans-serif;
+    -fx-font-size: 46px;
+    -fx-font-weight: bold;
+        -fx-text-fill: #006d63;
+
 }
+
 
 #hboxIndex{
     -fx-border-color: black; /* Color del borde negro */
