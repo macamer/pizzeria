@@ -25,8 +25,29 @@
     -fx-border-width: 1px;
     -fx-background-color: white;
 }
-
+/*
 #hboxBotones{
     -fx-background-color: white;
     -fx-border-radius: 5;
+}*/
+
+.combo-box:disabled {
+    -fx-opacity: 1.0; /* Restaura la opacidad para que el comboBox sea completamente visible */
+    -fx-text-fill: black; /* Texto negro */
+}
+
+.radio-button:disabled {
+    -fx-opacity: 1.0; /* Restaura la opacidad para que el radioButton sea completamente visible */
+    -fx-text-fill: black; /* Texto negro */
+}
+
+.text-field:disabled {
+    -fx-opacity: 1.0; /* Restaura la opacidad para que el TextField sea completamente visible */
+    -fx-text-fill: black; /* Texto negro */
+    -fx-background-color: white; /* Fondo blanco */
+}
+
+.check-box:disabled {
+    -fx-opacity: 1.0; /* Restaura la opacidad para que el CheckBox sea completamente visible */
+    -fx-text-fill: black; /* Texto negro */
 }
