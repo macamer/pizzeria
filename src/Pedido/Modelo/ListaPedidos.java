@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Pedido.Modelo;
 
 import java.util.ArrayList;
@@ -12,6 +8,7 @@ import java.util.Iterator;
  * @author Maria Cavaller
  */
 public class ListaPedidos {
+
     private ArrayList<Pedido> listaPedidos;
 
     //constructor por defecto
@@ -28,8 +25,20 @@ public class ListaPedidos {
         return insertado;
     }
 
+    public Pedido buscaPedido(int numPed) {
+        Pedido p = null;
+        p = listaPedidos.get(numPed);
+        return p;
+    }
 
-/*
+    //devuelve la longitud de la lista
+    public int numPedidos() {
+        int num = 0;
+        num = listaPedidos.size();
+        return num;
+    }
+
+    /*
     // borrar Pedido de la lista
     // a partir de un num de pedido
     public boolean borrarPedido(int numPed) {
