@@ -4,6 +4,7 @@
  */
 package Vistas;
 
+import Pedido.Modelo.ListaPedidos;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,6 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -22,13 +26,7 @@ import javafx.stage.Stage;
  */
 public class FXMLController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
+    ListaPedidos miLista = new ListaPedidos();
 
     @FXML
     private Label error;
@@ -36,14 +34,20 @@ public class FXMLController implements Initializable {
     @FXML
     private void btnIntroClicked() throws IOException {
         try {
-            Stage stage1 = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../Vistas/FXMLAlta.fxml"));
+
+            FXMLLoader fxml = new FXMLLoader(getClass().getResource("../Vistas/FXMLAlta.fxml"));
+            AnchorPane root = fxml.<AnchorPane>load();
             Scene scene = new Scene(root);
+            Stage stage1 = new Stage();
             scene.getStylesheets().add("resources/css/fxmlAlta.css");
             stage1.setScene(scene);
             stage1.setTitle("Introducir Pedido");
             //crear el Modity
+            stage1.initModality(Modality.APPLICATION_MODAL);
             //crear setController  para enviar los datos a AltaController
+            stage1.show();
+            FXMLAltaController cc = fxml.getController();
+            cc.setDatos(miLista);
             stage1.show();
         } catch (IOException ex) {
             error.setText("Error al crear la vista");
@@ -55,17 +59,21 @@ public class FXMLController implements Initializable {
             e.getStackTrace();
         }
     }
-    
+
     @FXML
     private void btnMostrarClicked() throws IOException {
         try {
-            Stage stage1 = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("../Vistas/FXMLMostrar.fxml"));
+            FXMLLoader fxml = new FXMLLoader(getClass().getResource("../Vistas/FXMLMostrar.fxml"));
+            AnchorPane root = fxml.<AnchorPane>load();
             Scene scene = new Scene(root);
+            Stage stage1 = new Stage();
             scene.getStylesheets().add("resources/css/fxmlMostrar.css");
             stage1.setScene(scene);
             stage1.setTitle("Mostrar Pedido");
+            stage1.initModality(Modality.APPLICATION_MODAL);
             stage1.show();
+            FXMLMostrarController cc = fxml.getController();
+            cc.setDatos(miLista);
         } catch (IOException ex) {
             error.setText("Error al crear la vista");
             System.out.println(ex.getMessage());
@@ -76,4 +84,10 @@ public class FXMLController implements Initializable {
             e.getStackTrace();
         }
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }
+
 }
