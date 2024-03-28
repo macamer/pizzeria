@@ -36,7 +36,7 @@ public class FXMLAltaController implements Initializable {
     @FXML
     ToggleGroup queso, cham, bacon;
     @FXML
-    Button btnGuardar;
+    Button btnGuardar, btnCancelar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -60,6 +60,12 @@ public class FXMLAltaController implements Initializable {
                 bacon.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(true));
             }
         });
+    }
+
+    @FXML
+    public void cancelar() {
+        Stage v = (Stage) btnCancelar.getScene().getWindow();
+        v.close();
     }
 
     public void btnGuardar() {
@@ -97,30 +103,30 @@ public class FXMLAltaController implements Initializable {
                     }
                     if (extras.isSelected()) {
                         extrasP = true;
-                        System.out.println("se ha seleccionado");
-                        queso.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
-                        cham.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
-                        bacon.getToggles().forEach(toggle -> ((RadioButton) toggle).setDisable(false));
-                        //calcular cantIng
-                        if (queso.getSelectedToggle() != null) {
-                            try {
-                                cantIng1 = Integer.parseInt(((RadioButton) queso.getSelectedToggle()).getText());
-                            } catch (Exception e) {
-                                result.setText("Error de conversión");
+                        if (queso.getSelectedToggle() == null && cham.getSelectedToggle() == null && bacon.getSelectedToggle() == null) {
+                            result.setText("Debes seleccionar algún extra");
+                            correcto = false;
+                        } else {
+                            if (queso.getSelectedToggle() != null) {
+                                try {
+                                    cantIng1 = Integer.parseInt(((RadioButton) queso.getSelectedToggle()).getText());
+                                } catch (Exception e) {
+                                    result.setText("Error de conversión");
+                                }
                             }
-                        }
-                        if (cham.getSelectedToggle() != null) {
-                            try {
-                                cantIng2 = Integer.parseInt(((RadioButton) cham.getSelectedToggle()).getText());
-                            } catch (Exception e) {
-                                result.setText("Error de conversión");
+                            if (cham.getSelectedToggle() != null) {
+                                try {
+                                    cantIng2 = Integer.parseInt(((RadioButton) cham.getSelectedToggle()).getText());
+                                } catch (Exception e) {
+                                    result.setText("Error de conversión");
+                                }
                             }
-                        }
-                        if (bacon.getSelectedToggle() != null) {
-                            try {
-                                cantIng3 = Integer.parseInt(((RadioButton) bacon.getSelectedToggle()).getText());
-                            } catch (Exception e) {
-                                result.setText("Error de conversión");
+                            if (bacon.getSelectedToggle() != null) {
+                                try {
+                                    cantIng3 = Integer.parseInt(((RadioButton) bacon.getSelectedToggle()).getText());
+                                } catch (Exception e) {
+                                    result.setText("Error de conversión");
+                                }
                             }
                         }
                     }
@@ -137,8 +143,6 @@ public class FXMLAltaController implements Initializable {
                 pedido = new Pedido(nomP, apeP, dniP, nomPizza, cantidad, extrasP, cantIng1, cantIng2, cantIng3);
                 System.out.println(pedido.toString());
                 if (miLista.agregarPedido(pedido)) {
-                    result.setText("Pedido Guardado con éxito");
-                    result.setTextFill(Color.GREEN);
                     Stage v = (Stage) btnGuardar.getScene().getWindow();
                     v.close();
                 } else {

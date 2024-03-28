@@ -17,12 +17,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="483.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vistas.FXMLAltaController">
     <children>
-        <Label layoutX="22.0" layoutY="28.0" text="Datos Personales:">
+        <Label layoutX="38.0" layoutY="38.0" text="Datos Personales:">
             <font>
                 <Font name="Candara Light" size="18.0" />
             </font>
         </Label>
-        <HBox alignment="CENTER" layoutX="22.0" layoutY="60.0" prefHeight="27.0" prefWidth="534.0">
+        <HBox alignment="CENTER" layoutX="41.0" layoutY="74.0" prefHeight="27.0" prefWidth="526.0">
             <children>
                 <TextField fx:id="nom" cache="true" prefHeight="26.0" prefWidth="158.0" promptText="Nombre" />
                 <TextField fx:id="ape" prefHeight="26.0" prefWidth="158.0" promptText="Apellidos">
@@ -37,17 +37,17 @@
                 </TextField>
             </children>
         </HBox>
-        <Label fx:id="errorDatos" layoutX="22.0" layoutY="102.0" prefHeight="18.0" prefWidth="408.0" textFill="RED">
+        <Label fx:id="errorDatos" layoutX="41.0" layoutY="109.0" prefHeight="18.0" prefWidth="408.0" textFill="RED">
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="13.0" />
          </font></Label>
-        <Label layoutX="22.0" layoutY="147.0" text="Pizzas">
+        <Label layoutX="55.0" layoutY="144.0" text="Pizzas">
             <font>
                 <Font name="Candara Light" size="18.0" />
             </font>
         </Label>
-      <ComboBox fx:id="pizza" editable="true" layoutX="121.0" layoutY="144.0" prefHeight="29.0" prefWidth="190.0" promptText="Selecciona opción" />
-      <HBox layoutX="21.0" layoutY="200.0" prefHeight="38.0" prefWidth="564.0">
+      <ComboBox fx:id="pizza" editable="true" layoutX="163.0" layoutY="139.0" prefHeight="29.0" prefWidth="190.0" promptText="Selecciona opción" />
+      <HBox layoutX="51.0" layoutY="192.0" prefHeight="27.0" prefWidth="534.0">
          <children>
             <Label prefHeight="18.0" prefWidth="223.0" text="¿Cuantas pizzas quieres?">
                <font>
@@ -68,12 +68,12 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="69.0" layoutY="271.0" text="Extras:">
+      <Label layoutX="53.0" layoutY="271.0" text="Extras:">
          <font>
             <Font name="Candara Light" size="18.0" />
          </font>
       </Label>
-      <CheckBox fx:id="extras" layoutX="142.0" layoutY="270.0" mnemonicParsing="false" />
+      <CheckBox fx:id="extras" layoutX="125.0" layoutY="270.0" mnemonicParsing="false" />
       <VBox fx:id="tablaExtras" alignment="CENTER" layoutX="195.0" layoutY="254.0" prefHeight="154.0" prefWidth="378.0">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="394.0">
@@ -284,21 +284,22 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <Button fx:id="btnGuardar" layoutX="493.0" layoutY="428.0" mnemonicParsing="false" onAction="#btnGuardar" text="Guardar" />
+      <Button fx:id="btnGuardar" layoutX="493.0" layoutY="428.0" mnemonicParsing="false" onAction="#btnGuardar" prefHeight="30.0" prefWidth="70.0" text="Guardar" />
       <ImageView fitHeight="87.0" fitWidth="84.0" layoutX="53.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/porcion.png" />
          </image>
       </ImageView>
-      <Label fx:id="result" layoutX="69.0" layoutY="435.0" prefHeight="18.0" prefWidth="273.0">
+      <Label fx:id="result" layoutX="69.0" layoutY="435.0" prefHeight="18.0" prefWidth="273.0" textFill="RED">
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label fx:id="errorCant" layoutX="384.0" layoutY="232.0" prefHeight="19.0" prefWidth="190.0" textFill="RED">
+      <Label fx:id="errorCant" layoutX="300.0" layoutY="225.0" prefHeight="19.0" prefWidth="190.0" textFill="RED">
          <font>
-            <Font size="13.0" />
+            <Font name="System Bold" size="13.0" />
          </font>
       </Label>
+      <Button fx:id="btnCancelar" layoutX="409.0" layoutY="429.0" mnemonicParsing="false" onAction="#cancelar" prefWidth="70.0" text="Cancelar" />
     </children>
 </AnchorPane>

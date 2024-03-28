@@ -11,18 +11,16 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author Asus
+ * @author Maria Cavaller   
  */
 public class FXMLController implements Initializable {
 
@@ -44,8 +42,8 @@ public class FXMLController implements Initializable {
             stage1.setTitle("Introducir Pedido");
             //crear el Modity
             stage1.initModality(Modality.APPLICATION_MODAL);
-            //crear setController  para enviar los datos a AltaController
             stage1.show();
+            //crear setController para enviar los datos a AltaController
             FXMLAltaController cc = fxml.getController();
             cc.setDatos(miLista);
             stage1.show();
@@ -87,7 +85,7 @@ public class FXMLController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }
 
 }

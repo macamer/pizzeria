@@ -41,9 +41,6 @@ public class FXMLMostrarController implements Initializable {
     @FXML
     private Label result;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -61,10 +58,11 @@ public class FXMLMostrarController implements Initializable {
 
     @FXML
     public void mostrarPrimero() {
-
         try {
             pedido = miLista.buscaPedido(0);
             mostrarDatos(pedido);
+        } catch (IndexOutOfBoundsException e){
+            result.setText("No hay datos");
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
@@ -76,30 +74,26 @@ public class FXMLMostrarController implements Initializable {
         if (b == btnPri) {
             pedido = miLista.buscaPedido(0);
             numLista = 0;
-            result.setText("He pulsado Primero"); //quitar después
             System.out.println("Primero - Numero Lista: " + numLista);
         } else if (b == btnAnt) {
-            result.setText("He pulsado anterior");//quitar después
             if (numLista > 0) {
                 numLista = numLista - 1;
                 pedido = miLista.buscaPedido(numLista);
                 System.out.println("Ant - Numero Lista: " + numLista);
             } else {
-                result.setText("No hay pedidos anteriores");
+                result.setText("No hay más pedidos");
                 result.setTextFill(Color.RED);
             }
         } else if (b == btnSig) {
-            result.setText("He pulsado siguiente");//quitar después
             if (numLista < (miLista.numPedidos() - 1)) {
                 numLista += 1;
                 pedido = miLista.buscaPedido(numLista);
                 System.out.println("Sigui - Numero Lista: " + numLista);
             } else {
-                result.setText("No hay pedidos anteriores");
+                result.setText("No hay más pedidos");
                 result.setTextFill(Color.RED);
             }
         } else if (b == btnUlt) {
-            result.setText("He pulsado última");//quitar después
             if (numLista < (miLista.numPedidos() - 1)) {
                 numLista = (miLista.numPedidos() - 1);
                 pedido = miLista.buscaPedido(numLista);
@@ -109,7 +103,6 @@ public class FXMLMostrarController implements Initializable {
                 result.setTextFill(Color.RED);
             }
         }
-
         mostrarDatos(pedido);
     }
 
